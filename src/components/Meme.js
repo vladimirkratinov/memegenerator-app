@@ -4,7 +4,12 @@ import MemeImage from "./MemeImage";
 import "../style.css";
 
 export default function Meme() {
-  const [currentURL, setURL] = useState("pepe.jpeg");
+  const [meme, setMeme] = useState({
+    topText: "",
+    bottomText: "",
+    memeURL: "pepe.jpeg",
+  });
+  const [allMemeImages, setAllMemeImages] = useState(memeData);
   const [isPressed, setPressed] = useState(false);
 
   const handlePress = () => {
@@ -16,10 +21,13 @@ export default function Meme() {
   };
 
   function getMemeImage() {
-    const memesArray = memeData.data.memes;
+    const memesArray = allMemeImages.data.memes;
     const randomNumber = Math.floor(Math.random() * memesArray.length);
     const url = memesArray[randomNumber].url;
-    setURL(url);
+    setMeme((prevMeme) => ({
+      ...prevMeme,
+      memeURL: url,
+    }));
   }
 
   return (
@@ -40,7 +48,7 @@ export default function Meme() {
         </button>
       </div>
       <div>
-        <MemeImage url={currentURL} />
+        <MemeImage url={meme.memeURL} />
       </div>
     </main>
   );

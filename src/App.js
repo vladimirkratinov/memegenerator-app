@@ -1,8 +1,7 @@
 import "./style.css";
 import Header from "./components/Header";
 import Meme from "./components/Meme";
-import MemeImage from "./components/MemeImage";
-import memeData from "./memeData";
+import RandomArray from "./components/RandomArray";
 
 function App() {
 
@@ -10,6 +9,7 @@ function App() {
     <div>
       <Header />
       <Meme />
+      <RandomArray />
     </div>
   );
 }

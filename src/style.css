@@ -1,5 +1,5 @@
 body {
-    font-family: "Karla", sans-serif;
+    font-family: "Inter", sans-serif;
     margin: 0;
 }
 
@@ -25,22 +25,20 @@ main {
 
 .header--title {
     color: #FFF;
-    font-family: Inter;
     font-size: 22px;
-    font-style: normal;
     font-weight: 600;
-    line-height: normal;
     letter-spacing: 0px;
+    font-style: normal;
+    line-height: normal;
     margin-right: auto;
 }
 
 .header--project {
     color: #FFF;
     text-align: right;
-    font-family: Inter;
     font-size: 12px;
-    font-style: normal;
     font-weight: 500;
+    font-style: normal;
     line-height: normal;
 }
 
@@ -51,7 +49,6 @@ main {
 }
 
 .form--input {
-    font-family: "Inter", sans-serif;
     border-radius: 6px;
     border: 1px solid #D5D4D8;
     text-indent: 5px;
@@ -60,7 +57,6 @@ main {
 .form--button {
     grid-column: 1 / -1;
     background: #7c299a;
-    font-family: "Inter", sans-serif;
     color: white;
     border-radius: 6px;
     border: none;
@@ -88,4 +84,16 @@ main {
   
   .result--image:hover {
     filter: brightness(60%);
+  }
+
+  .random--array--container {
+    display: grid;
+    margin-left: 15px;
+    color: black;
+    font-size: 13px;
+  }
+
+  .random--array--button {
+    width: 150px;
+    height: 35px;
   }
