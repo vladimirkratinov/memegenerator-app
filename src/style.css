@@ -67,9 +67,10 @@ main {
     cursor: pointer;
 }
 
-.result--image {
-    max-width: 500px;
-    display: flex;
+/* .result--image {
+    width: 350px;
+    display: flexbox;
     margin-left: auto;
     margin-right: auto;
-}
+    display: flex;
+} */

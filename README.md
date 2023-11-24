@@ -1,1 +1,1 @@
-### MemeGenerator App
+### Meme Generator App
