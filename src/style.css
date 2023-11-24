@@ -25,7 +25,7 @@ main {
 
 .header--title {
     color: #FFF;
-    font-family: Karla;
+    font-family: Inter;
     font-size: 22px;
     font-style: normal;
     font-weight: 600;
@@ -51,7 +51,7 @@ main {
 }
 
 .form--input {
-    font-family: "Karla", sans-serif;
+    font-family: "Inter", sans-serif;
     border-radius: 6px;
     border: 1px solid #D5D4D8;
     text-indent: 5px;
@@ -59,18 +59,19 @@ main {
 
 .form--button {
     grid-column: 1 / -1;
-    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
-    font-family: "Karla", sans-serif;
+    background: #7c299a;
+    font-family: "Inter", sans-serif;
     color: white;
     border-radius: 6px;
     border: none;
     cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* .result--image {
-    width: 350px;
-    display: flexbox;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-} */
+.form--button.pressed {
+    background-color: #ae67c8;
+    transform: scale(0.95);
+    box-shadow: none;
+  }
