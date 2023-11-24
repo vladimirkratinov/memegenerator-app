@@ -28,8 +28,8 @@ export default function Meme() {
         <input type="text" placeholder="Top text" className="form--input" />
         <input type="text" placeholder="Bottom text" className="form--input" />
         <button
-          onClick={getMemeImage}
           className={`form--button ${isPressed ? "pressed" : ""}`}
+          onClick={getMemeImage}
           onMouseDown={handlePress}
           onMouseUp={handleRelease}
           onMouseLeave={handleRelease}

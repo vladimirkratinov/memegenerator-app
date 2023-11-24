@@ -75,3 +75,17 @@ main {
     transform: scale(0.95);
     box-shadow: none;
   }
+
+  .result--image {
+    width: 350px;
+    height: auto;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+    display: block;
+    margin: 15px auto;
+    border-radius: 10px;
+  }
+  
+  .result--image:hover {
+    filter: brightness(60%);
+  }
