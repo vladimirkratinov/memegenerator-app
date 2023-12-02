@@ -17,8 +17,8 @@ export default function BoxGrid() {
   const squareElements = squares.map((square) => (
     <Box
       key={square.id}
-      on={square.on}
       id={square.id}
+      on={square.on}
       onClickHandler={handleClick}
     />
   ));

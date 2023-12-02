@@ -88,16 +88,24 @@ main {
 
    /* ------------------------------------------ */
 
-  .random--array--container {
+  .random-array-container {
     display: grid;
     margin-left: 15px;
     color: black;
     font-size: 13px;
   }
 
-  .random--array--button {
-    width: 150px;
-    height: 35px;
+  .random-array-words {
+    color: black;
+  }
+
+  .random-array-button {
+    width: 130px;
+    height: 30px;
+    background-color: rgb(255, 247, 192);
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #ccc;
   }
 
   /* ------------------------------------------ */
@@ -109,7 +117,7 @@ main {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-shadow: 0 4px 8px;
+    box-shadow: 0 2px 4px;
     border: none;
     cursor: pointer;
     outline: none;

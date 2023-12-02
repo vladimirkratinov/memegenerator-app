@@ -9,8 +9,8 @@ function App() {
     <div>
       <Header />
       <Meme />
-      {/* <hr></hr> */}
-      {/* <RandomArray /> */}
+      <hr></hr>
+      <RandomArray />
       <hr></hr>
       <BoxGrid />
     </div>

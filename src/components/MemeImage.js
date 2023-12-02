@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../style.css';
+import "../style.css";
 
 export default function MemeImage(props) {
   const [isHovered, setIsHovered] = useState(false);

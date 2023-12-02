@@ -1,11 +1,11 @@
-export default [
+const boxesData = [
   {
     id: 1,
-    on: true,
+    on: false,
   },
   {
     id: 2,
-    on: false,
+    on: true,
   },
   {
     id: 3,
@@ -17,7 +17,7 @@ export default [
   },
   {
     id: 5,
-    on: false,
+    on: true,
   },
   {
     id: 6,
@@ -29,7 +29,7 @@ export default [
   },
   {
     id: 8,
-    on: false,
+    on: true,
   },
   {
     id: 9,
@@ -45,11 +45,11 @@ export default [
   },
   {
     id: 12,
-    on: false,
+    on: true,
   },
   {
     id: 13,
-    on: false,
+    on: true,
   },
   {
     id: 14,
@@ -64,3 +64,5 @@ export default [
     on: false,
   },
 ];
+
+export default boxesData;
