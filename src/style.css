@@ -123,6 +123,6 @@ main {
   .box-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 5px; /* Adjust the gap as per your design preference */
-    padding: 10px;
+    gap: 10px; /* Adjust the gap as per your design preference */
+    padding: 20px;
   }

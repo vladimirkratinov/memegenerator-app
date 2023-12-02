@@ -1,17 +1,12 @@
 import React from "react";
 
 export default function Box(props) {
-  const [on, setOn] = React.useState(props.on);
   const [isPressed, setPressed] = React.useState(false);
 
   const styles = {
-    backgroundColor: on ? "green" : "yellow",
-    color: on ? "white" : "black",
+    backgroundColor: props.on ? "green" : "yellow",
+    color: props.on ? "white" : "black",
   };
-
-  function toggle() {
-    setOn((prevOn) => !prevOn);
-  }
 
   const handlePress = () => {
     setPressed(true);
@@ -25,14 +20,14 @@ export default function Box(props) {
     <div
       style={styles}
       className={`box-item ${isPressed ? "pressed" : ""}`}
-      onClick={toggle}
+      onClick={()=>props.onClickHandler(props.id)}
       onMouseDown={handlePress}
       onMouseUp={handleRelease}
       onMouseLeave={handleRelease}
       onTouchStart={handlePress}
       onTouchEnd={handleRelease}
     >
-      {props.text}
+      {props.id}
     </div>
   );
 }

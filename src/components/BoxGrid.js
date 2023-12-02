@@ -1,12 +1,27 @@
 import React from "react";
-import boxesData from "../boxesData";
+import boxes from "../boxesData";
 import "../style.css";
 import Box from "./Box";
 
 export default function BoxGrid() {
-  const [boxes, setBoxes] = React.useState(boxesData);
-  const boxesArray = boxesData.map((box) => (
-    <Box key={box.id} on={box.on} text={box.id} />
+  const [squares, setSquares] = React.useState(boxes);
+
+  function handleClick(id) {
+    setSquares((prevSquares) => {
+      return prevSquares.map((square) => {
+        return square.id === id ? { ...square, on: !square.on } : square;
+      });
+    });
+  }
+
+  const squareElements = squares.map((square) => (
+    <Box
+      key={square.id}
+      on={square.on}
+      id={square.id}
+      onClickHandler={handleClick}
+    />
   ));
-  return <div className="box-grid">{boxesArray}</div>;
+
+  return <div className="box-grid">{squareElements}</div>;
 }
