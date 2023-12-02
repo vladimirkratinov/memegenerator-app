@@ -2,6 +2,7 @@ import "./style.css";
 import Header from "./components/Header";
 import Meme from "./components/Meme";
 import RandomArray from "./components/RandomArray";
+import Boxes from "./components/Boxes";
 
 function App() {
 
@@ -9,7 +10,10 @@ function App() {
     <div>
       <Header />
       <Meme />
-      <RandomArray />
+      {/* <hr></hr> */}
+      {/* <RandomArray /> */}
+      <hr></hr>
+      <Boxes />
     </div>
   );
 }
