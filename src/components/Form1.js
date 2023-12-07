@@ -13,19 +13,18 @@ export default function Form1() {
   }
 
   return (
-    <span>
-      <form>
-        <input
-          type="text"
-          placeholder="First Name"
-          onChange={handleFirstNameChange}
-        />
-        <input
-          type="text"
-          placeholder="Last Name"
-          onChange={handleLastNameChange}
-        />
-      </form>
-    </span>
+    <form>
+      <h3>Form 1 - simple</h3>
+      <input
+        type="text"
+        placeholder="First Name"
+        onChange={handleFirstNameChange}
+      />
+      <input
+        type="text"
+        placeholder="Last Name"
+        onChange={handleLastNameChange}
+      />
+    </form>
   );
 }

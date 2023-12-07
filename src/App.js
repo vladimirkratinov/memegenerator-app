@@ -5,6 +5,7 @@ import RandomArray from "./components/RandomArray";
 import BoxGrid from "./components/BoxGrid";
 import Message from "./components/Message";
 import Form1 from "./components/Form1";
+import Form2 from "./components/Form2";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <RandomArray />
       <hr></hr>
       <Form1 />
+      <Form2 />
       <hr></hr>
       <BoxGrid />
       
