@@ -4,6 +4,7 @@ import Meme from "./components/Meme";
 import RandomArray from "./components/RandomArray";
 import BoxGrid from "./components/BoxGrid";
 import Message from "./components/Message";
+import Form1 from "./components/Form1";
 
 function App() {
   return (
@@ -15,7 +16,11 @@ function App() {
       <hr></hr>
       <RandomArray />
       <hr></hr>
+      <Form1 />
+      <hr></hr>
       <BoxGrid />
+      
+      
     </div>
   );
 }
