@@ -3,10 +3,10 @@ import React from "react";
 export default function Box(props) {
   const [isPressed, setPressed] = React.useState(false);
 
-/* JS object must be camelCase */
+  /* JS object must be camelCase */
   const styles = {
-    backgroundColor: props.on ? "pink" : "red",
-    color: props.on ? "black" : "white"    
+    backgroundColor: props.on ? "#FFFFF0" : "#672280",
+    color: props.on ? "black" : "white",
   };
 
   const handlePress = () => {

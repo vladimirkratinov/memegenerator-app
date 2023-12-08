@@ -31,7 +31,7 @@ export default function Form2() {
     setFormData((prevFormData) => {
       return {
         ...prevFormData,
-        [name]: type === "checkbox" ? checked : value
+        [name]: type === "checkbox" ? checked : value,
       };
     });
   }
@@ -46,7 +46,7 @@ export default function Form2() {
   return (
     // add Submit Handler for Submit Button
     <form onSubmit={handleSubmit}>
-      <h3>Form 2 - object</h3>
+      <h2 className="margin-left-style">Form 2 - object</h2>
       <input
         style={{ width: "200px" }}
         name="firstName"

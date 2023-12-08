@@ -57,81 +57,85 @@ export default function Form3() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h3>Challenge - Form 3</h3>
-      <input
-        style={{ width: "200px" }}
-        name="email"
-        type="email"
-        placeholder="Email"
-        value={formData.email}
-        onChange={handleChange}
-      />
-
-      <div style={{ display: "flex" }}>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <h2 className="margin-left-style">Form 3 - Challenge</h2>
         <input
           style={{ width: "200px" }}
-          id="password"
-          name="password"
-          type={showPassword ? "text" : "password"}
-          placeholder="Password"
-          value={formData.password}
+          name="email"
+          type="email"
+          placeholder="Email"
+          value={formData.email}
           onChange={handleChange}
         />
 
-        <button
-          type="button"
-          onClick={handleTogglePassword}
-          style={{ marginLeft: "20px", width: "100px", height: "33px" }}
-        >
-          {showPassword ? "Hide" : "Show"}
-        </button>
-      </div>
+        <div style={{ display: "flex" }}>
+          <input
+            style={{ width: "200px" }}
+            id="password"
+            name="password"
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+          />
 
-      <input
-        style={{ width: "200px" }}
-        name="confirmPassword"
-        type={showPassword ? "text" : "password"}
-        placeholder="Confirm Password"
-        value={formData.confirmPassword}
-        onChange={handleChange}
-      />
+          <button
+            type="button"
+            onClick={handleTogglePassword}
+            style={{ marginLeft: "20px", width: "100px", height: "33px" }}
+          >
+            {showPassword ? "Hide" : "Show"}
+          </button>
+        </div>
 
-      {formData.password !== "" && formData.confirmPassword !== "" && (
-        <label
-          htmlFor="password"
-          style={{
-            marginLeft: "20px",
-            color:
-              formData.password === formData.confirmPassword ? "green" : "red",
-          }}
-        >
-          {`${
-            formData.password === formData.confirmPassword
-              ? "Password is correct! ✅"
-              : "Password incorrect! ❌"
-          }`}
-        </label>
-      )}
-
-      {/* Checkbox */}
-      <div style={containerStyle}>
         <input
-          style={inputStyle}
-          name="subscription"
-          id="subscription"
-          type="checkbox"
-          checked={formData.subscription}
+          style={{ width: "200px" }}
+          name="confirmPassword"
+          type={showPassword ? "text" : "password"}
+          placeholder="Confirm Password"
+          value={formData.confirmPassword}
           onChange={handleChange}
         />
-        <label style={labelStyle} htmlFor="subscription">
-          I want to join the newsletter
-        </label>
-      </div>
-      <br />
-      <div style={containerStyle}>
-        <button className="submit-button">Submit</button>
-      </div>
-    </form>
+
+        {formData.password !== "" && formData.confirmPassword !== "" && (
+          <label
+            htmlFor="password"
+            style={{
+              marginLeft: "20px",
+              color:
+                formData.password === formData.confirmPassword
+                  ? "green"
+                  : "red",
+            }}
+          >
+            {`${
+              formData.password === formData.confirmPassword
+                ? "Password is correct! ✅"
+                : "Password incorrect! ❌"
+            }`}
+          </label>
+        )}
+
+        {/* Checkbox */}
+        <div style={containerStyle}>
+          <input
+            style={inputStyle}
+            name="subscription"
+            id="subscription"
+            type="checkbox"
+            checked={formData.subscription}
+            onChange={handleChange}
+          />
+          <label style={labelStyle} htmlFor="subscription">
+            I want to join the newsletter
+          </label>
+        </div>
+        <br />
+        <div style={containerStyle}>
+          <button className="submit-button">Submit</button>
+        </div>
+      </form>
+    </div>
   );
 }

@@ -13,11 +13,12 @@ export default function RandomArray() {
   }
 
   return (
-    <div className="random-array-container">
-      <button className="random-array-button" onClick={addItem}>
+    <div className="margin-left-style">
+      <h2>Random Array</h2>
+      <button className="fancy-button" onClick={addItem}>
         Add Item
       </button>
-      <div className="random-array-words">{wordsList}</div>
+      <div>{wordsList}</div>
     </div>
   );
 }

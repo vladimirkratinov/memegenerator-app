@@ -14,7 +14,7 @@ export default function Form1() {
 
   return (
     <form>
-      <h3>Form 1 - simple</h3>
+      <h2 className="margin-left-style">Form 1 - simple</h2>
       <input
         style={{ width: "200px" }}
         type="text"

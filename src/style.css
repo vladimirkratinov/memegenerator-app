@@ -7,6 +7,105 @@ main {
     padding: 36px;
 }
 
+/* Basic styling for the navigation bar */
+.nav {
+  text-align: center;
+  background-color: #333; /* Background color of the navbar */
+  color: #fff; /* Text color */
+  padding: 10px; /* Padding around the content inside the navbar */
+}
+
+/* Style for the navigation links */
+.nav a {
+  color: #fff; /* Link text color */
+  text-decoration: none; /* Remove underlines from links */
+  margin: 0 15px; /* Add some spacing between links */
+}
+
+/* Hover effect for the navigation links */
+.nav a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+
+/* -------- NEW NAVBAR!!! ------------- */
+
+.navbar {
+  background-color: #2d0b3a;
+  overflow: hidden;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #672280;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  animation: fadeInDown 0.3s ease-in-out;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* End of navbar */
+
 input, textarea {
   margin-bottom: 15px;
   margin-left: 20px;
@@ -56,7 +155,55 @@ label {
   cursor: not-allowed;
 }
 
-/*  */
+/* fancy button */
+
+.fancy-button {
+  display: inline-block;
+  padding: 15px 30px;
+  width: 200px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #672280; /* Green color */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Shine Animation Effect */
+.fancy-button::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  top: -110%;
+  left: -210%;
+  width: 200%;
+  height: 200%;
+  opacity: 0;
+  transform: rotate(-30deg);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.fancy-button:hover::before {
+  opacity: 1;
+  transform: rotate(0);
+  top: -10%;
+  left: -10%;
+}
+
+/* Hover Effect */
+.fancy-button:hover {
+  background-color: #9f7fab; /* Darker green on hover */
+}
+
+/* Transition Effect */
+.fancy-button {
+  transition: background-color 0.3s, color 0.3s;
+}
 
 .header {
     display: flex;
