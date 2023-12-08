@@ -9,6 +9,7 @@ export default function Form2() {
     comments: "",
     isFriendly: false,
     employment: "",
+    favColor: "",
   });
 
   const labelStyle = { verticalAlign: "middle", margin: 0 };
@@ -25,7 +26,7 @@ export default function Form2() {
     marginRight: "20px",
   };
 
-  console.log(formData);
+  console.log(formData.favColor);
 
   function handleChange(event) {
     const { name, value, type, checked } = event.target;
@@ -132,6 +133,30 @@ export default function Form2() {
         </label>
         <br />
       </fieldset>
+      <br />
+
+      {/* Multi-optional select form */}
+      <div style={containerStyle}>
+        <label style={labelStyle} htmlFor="favColor">
+          What is your favorite color?
+        </label>
+        <br />
+        <select
+          id="favColor"
+          name="favColor"
+          value={formData.favColor}
+          onChange={handleChange}
+        >
+          <option value="">-- Choose --</option>
+          <option value="red">Red</option>
+          <option value="orange">Orange</option>
+          <option value="yellow">Yellow</option>
+          <option value="green">Green</option>
+          <option value="blue">Blue</option>
+          <option value="indigo">Indigo</option>
+          <option value="violet">Violet</option>
+        </select>
+      </div>
     </form>
   );
 }
