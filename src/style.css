@@ -21,6 +21,43 @@ label {
   font-size: 14px;
 }
 
+/* Submit Button */
+
+.submit-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #3498db;
+  color: #ffffff;
+  background-color: #3498db;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover Effect */
+.submit-button:hover {
+  background-color: #ffffff;
+  color: #3498db;
+}
+
+/* Additional Styling (Optional) */
+.submit-button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.7);
+}
+
+/* Disable State (Optional) */
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/*  */
+
 .header {
     display: flex;
     background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);

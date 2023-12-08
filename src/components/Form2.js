@@ -26,22 +26,29 @@ export default function Form2() {
     marginRight: "20px",
   };
 
-  console.log(formData.favColor);
-
   function handleChange(event) {
     const { name, value, type, checked } = event.target;
     setFormData((prevFormData) => {
       return {
         ...prevFormData,
-        [name]: type === "checkbox" ? checked : value,
+        [name]: type === "checkbox" ? checked : value
       };
     });
   }
 
+  function handleSubmit(event) {
+    // preventing default means that it won't refresh our page
+    // and re-render our app with all default values and state
+    event.preventDefault();
+    console.log(formData);
+  }
+
   return (
-    <form>
+    // add Submit Handler for Submit Button
+    <form onSubmit={handleSubmit}>
       <h3>Form 2 - object</h3>
       <input
+        style={{ width: "200px" }}
         name="firstName"
         type="text"
         placeholder="First Name"
@@ -49,6 +56,7 @@ export default function Form2() {
         onChange={handleChange}
       />
       <input
+        style={{ width: "200px" }}
         name="lastName"
         type="text"
         placeholder="Last Name"
@@ -56,6 +64,7 @@ export default function Form2() {
         onChange={handleChange}
       />
       <input
+        style={{ width: "200px" }}
         name="email"
         type="email"
         placeholder="Email"
@@ -63,12 +72,14 @@ export default function Form2() {
         onChange={handleChange}
       />
       <textarea
+        style={{ width: "200px", height: "60px" }}
         name="comments"
         placeholder="Comments"
         value={formData.comments}
         onChange={handleChange}
       />
-      {/* Checkbox Field (style is align checkbox and label vertically middle) */}
+
+      {/* Checkbox */}
       <div style={containerStyle}>
         <input
           style={inputStyle}
@@ -81,8 +92,8 @@ export default function Form2() {
         <label style={labelStyle} htmlFor="isFriendly">
           Are you friendly?
         </label>
-        <br />
       </div>
+      <br />
 
       {/* Radio Buttons */}
       <fieldset>
@@ -131,7 +142,6 @@ export default function Form2() {
         <label style={labelStyle} htmlFor="full-time">
           Full-time
         </label>
-        <br />
       </fieldset>
       <br />
 
@@ -156,6 +166,12 @@ export default function Form2() {
           <option value="indigo">Indigo</option>
           <option value="violet">Violet</option>
         </select>
+      </div>
+      <br />
+
+      {/* Submit Button */}
+      <div style={containerStyle}>
+        <button className="submit-button">Submit</button>
       </div>
     </form>
   );

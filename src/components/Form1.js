@@ -16,11 +16,13 @@ export default function Form1() {
     <form>
       <h3>Form 1 - simple</h3>
       <input
+        style={{ width: "200px" }}
         type="text"
         placeholder="First Name"
         onChange={handleFirstNameChange}
       />
       <input
+        style={{ width: "200px" }}
         type="text"
         placeholder="Last Name"
         onChange={handleLastNameChange}
