@@ -10,28 +10,6 @@ import Form2 from "./components/Form2";
 import Form3 from "./components/Form3";
 
 function App() {
-  const Forms = () => (
-    <div>
-      Forms Page
-      <ul>
-        <li>
-          <Link to="/forms/form-1">Form1</Link>
-        </li>
-        <li>
-          <Link to="/forms/form-2">Form2</Link>
-        </li>
-        <li>
-          <Link to="/forms/form-3">Form3</Link>
-        </li>
-      </ul>
-    </div>
-  );
-
-  const FormsLinks = ({ match }) => (
-    <div>
-      <p>{match.params.id}</p>
-    </div>
-  );
 
   return (
     <div>
@@ -44,10 +22,10 @@ function App() {
           Message
         </Link>
         <Link to="/random-array" className="nav-item">
-          RandomArray
+          Array
         </Link>
         <Link to="/box-grid" className="nav-item">
-          Box Grid
+          Grid
         </Link>
         <div className="dropdown">
           <button className="dropbtn">Forms ▼</button>

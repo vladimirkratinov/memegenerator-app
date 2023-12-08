@@ -15,7 +15,7 @@ export default function RandomArray() {
   return (
     <div className="margin-left-style">
       <h2>Random Array</h2>
-      <button className="fancy-button" onClick={addItem}>
+      <button className="submit-button" onClick={addItem}>
         Add Item
       </button>
       <div>{wordsList}</div>
