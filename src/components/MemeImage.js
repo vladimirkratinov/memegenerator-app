@@ -17,7 +17,7 @@ export default function MemeImage(props) {
       <img
         src={props.url}
         alt={props.name}
-        className="result--image"
+        className="meme-image"
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
       />

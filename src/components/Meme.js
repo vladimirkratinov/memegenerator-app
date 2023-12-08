@@ -47,8 +47,10 @@ export default function Meme() {
           Get a new meme image
         </button>
       </div>
-      <div>
+      <div className="meme-container">
         <MemeImage url={meme.memeURL} />
+        <h2 className="top-text">Text Line Top</h2>
+        <h2 className="bottom-text">Text Line Bottom</h2>
       </div>
     </main>
   );
