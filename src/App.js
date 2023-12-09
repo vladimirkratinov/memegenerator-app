@@ -5,6 +5,7 @@ import Meme from "./components/Meme";
 import RandomArray from "./components/RandomArray";
 import BoxGrid from "./components/BoxGrid";
 import Message from "./components/Message";
+import StarWars from "./components/StarWars";
 import Form1 from "./components/Form1";
 import Form2 from "./components/Form2";
 import Form3 from "./components/Form3";
@@ -27,6 +28,9 @@ function App() {
         <Link to="/box-grid" className="nav-item">
           Grid
         </Link>
+        <Link to="/star-wars" className="nav-item">
+          SW
+        </Link>
         <div className="dropdown">
           <button className="dropbtn">Forms ▼</button>
           <div className="dropdown-content">
@@ -42,6 +46,7 @@ function App() {
         <Route path="/message" element={<Message />} />
         <Route path="/random-array" element={<RandomArray />} />
         <Route path="/box-grid" element={<BoxGrid />} />
+        <Route path="/star-wars" element={<StarWars />} />
         <Route path="/forms/form-1" element={<Form1 />} />
         <Route path="/forms/form-2" element={<Form2 />} />
         <Route path="/forms/form-3" element={<Form3 />} />

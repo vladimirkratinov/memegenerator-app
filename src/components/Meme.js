@@ -1,6 +1,6 @@
 import React from "react";
 import { useRef } from "react";
-import memeData from "../memeData";
+// import memeData from "../memeData";
 import MemeImage from "./MemeImage";
 import "../style.css";
 
@@ -8,11 +8,19 @@ export default function Meme() {
   const [meme, setMeme] = React.useState({
     topText: "",
     bottomText: "",
-    memeURL: "https://i.imgflip.com/43a45p.png",
+    memeURL: "",
   });
-  const [allMemeImages, setAllMemeImages] = React.useState(memeData);
+
+  const [allMemes, setAllMemes] = React.useState([]);
   const [isPressed, setPressed] = React.useState(false);
   const canvasRef = useRef(null);
+
+  React.useEffect(() => {
+    fetch(`https://api.imgflip.com/get_memes`)
+      .then((res) => res.json())
+      .then((data) => setAllMemes(data.data.memes));
+    console.log("Effect ran");
+  }, []);
 
   const handlePress = () => {
     setPressed(true);
@@ -23,10 +31,11 @@ export default function Meme() {
   };
 
   function getMemeImage() {
-    const memesArray = allMemeImages.data.memes;
-    const randomNumber = Math.floor(Math.random() * memesArray.length);
-    const url = memesArray[randomNumber].url;
+    const randomNumber = Math.floor(Math.random() * allMemes.length);
+    const url = allMemes[randomNumber].url;
+
     console.log(url);
+
     setMeme((prevMeme) => ({
       ...prevMeme,
       memeURL: url,
@@ -49,9 +58,9 @@ export default function Meme() {
     const memeImage = new Image();
     memeImage.crossOrigin = "anonymous"; // FIX SAVE FUNCTION
     memeImage.src = meme.memeURL;
-    
+
     console.log(memeImage.src);
-    
+
     memeImage.onload = () => {
       canvas.width = memeImage.width;
       canvas.height = memeImage.height;
@@ -75,8 +84,16 @@ export default function Meme() {
 
       // Draw bottom text
       context.textBaseline = "bottom"; // Align text to the bottom
-      context.strokeText(meme.bottomText.toUpperCase(), canvas.width / 2, canvas.height - 10);
-      context.fillText(meme.bottomText.toUpperCase(),canvas.width / 2, canvas.height - 10);
+      context.strokeText(
+        meme.bottomText.toUpperCase(),
+        canvas.width / 2,
+        canvas.height - 10
+      );
+      context.fillText(
+        meme.bottomText.toUpperCase(),
+        canvas.width / 2,
+        canvas.height - 10
+      );
 
       // Convert canvas content to data URL and open in a new window for download
       const dataURL = canvas.toDataURL("image/png");
@@ -126,7 +143,7 @@ export default function Meme() {
       </div>
       <div className="fancy-button-container">
         <button className="fancy-button" onClick={saveMeme}>
-          Save Meme
+          Save
         </button>
       </div>
     </main>
