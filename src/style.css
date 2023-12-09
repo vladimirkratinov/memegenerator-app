@@ -350,7 +350,7 @@ label {
   text-align: center;
   font-family: "Impact", sans-serif; /* Use a bold, uppercase font like Impact */
   text-transform: uppercase;
-  font-size: 36px; /* Adjust the font size as needed */
+  font-size: 30px; /* Adjust the font size as needed */
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   -webkit-text-stroke: 2px black; /* Add a black outline */
