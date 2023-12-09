@@ -1,6 +1,4 @@
 import React from "react";
-import { useRef } from "react";
-// import memeData from "../memeData";
 import MemeImage from "./MemeImage";
 import "../style.css";
 
@@ -8,19 +6,32 @@ export default function Meme() {
   const [meme, setMeme] = React.useState({
     topText: "",
     bottomText: "",
-    memeURL: "",
+    memeURL: ""
   });
 
   const [allMemes, setAllMemes] = React.useState([]);
   const [isPressed, setPressed] = React.useState(false);
-  const canvasRef = useRef(null);
+  const canvasRef = React.useRef(null);
 
+  // promise version
+
+  // React.useEffect(() => {
+  //   fetch(`https://api.imgflip.com/get_memes`)
+  //     .then((res) => res.json())
+  //     .then((data) => setAllMemes(data.data.memes));
+  //   console.log("Effect ran");
+  // }, []);
+
+  //async await version
+  
   React.useEffect(() => {
-    fetch(`https://api.imgflip.com/get_memes`)
-      .then((res) => res.json())
-      .then((data) => setAllMemes(data.data.memes));
-    console.log("Effect ran");
-  }, []);
+    async function getMemes() {
+      const res = await fetch("https://api.imgflip.com/get_memes")
+      const data = await res.json()
+      setAllMemes(data.data.memes)
+    }
+    getMemes()
+  }, [])
 
   const handlePress = () => {
     setPressed(true);
